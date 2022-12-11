@@ -1,0 +1,59 @@
+getMean <- function(folder, type, id=1:332){
+  files_full<-list.files(folder, full.names=TRUE)
+  
+  dat<-data.frame()
+
+  for (i in id){
+    dat<-rbind(dat, read.csv(files_full[i]))
+  }
+  
+  dat_mean<-mean(dat[, type], na.rm=TRUE)
+  
+  print(dat_mean)
+}
+
+getCompleteObservation <- function(folder, id=1:332){
+  files_list <- list.files(folder, full.names=TRUE)
+  
+  id_list = c()
+  count_list = c()
+  
+  for (i in id) {
+    dat <- read.csv(files_list[i])
+    count=nrow(na.omit(dat))
+    id_list <- c(id_list, i)
+    count_list <- c(count_list, count)
+  }
+  
+  df <- data.frame(id_list, count_list)
+  print(df)
+}
+
+getCorrelation <- function(folder, limen = 0){
+  files_list <- list.files(folder, full.names=TRUE)
+  corel_full <- vector(mode="numeric", length=0)
+  for (i in seq_along(files_list)){
+    dat <- read.csv(files_list[i])
+    dat_omit <- na.omit(dat)
+    count = nrow(dat_omit)
+    if (count > limen) {
+      corel <- cor(dat_omit[, "sulfate"], dat_omit[, "nitrate"])
+      corel_full <- c(corel_full, corel)
+    }
+  }
+  corel_full
+}
+
+setwd("C:\\Users\\User\\Desktop\\")
+
+getMean("data", "sulfate", 1:10)
+
+print("------------------")
+
+getCompleteObservation("data", c(2, 4, 8, 10, 12))
+
+print("------------------")
+
+res <- getCorrelation("data", 150)
+print(head(res))
+print(summary(res))
