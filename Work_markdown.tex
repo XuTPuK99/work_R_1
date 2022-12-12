@@ -1,0 +1,184 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\XeTeXdefaultencoding utf8
+\usepackage{xltxtra}
+\usepackage{graphicx}
+\usepackage[multidot]{grffile}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\setmonofont{Courier New}
+\newfontfamily{\cyrillicfont}{Times New Roman}
+\newfontfamily{\cyrillicfonttt}{Courier New}
+\newfontfamily{\cyrillicfontsf}{Arial}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Домашнее задание},
+  pdfauthor={Тюрнев Иван},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Домашнее задание}
+\author{Тюрнев Иван}
+\date{Декабрь 2022}
+
+\begin{document}
+\maketitle
+
+\href{https://github.com/XuTPuK99/work_R_1}{Мой GitHub}
+
+\hypertarget{ux437ux430ux434ux430ux43dux438ux435-ux432ux438ux434ux44b-ux430ux43dux430ux43bux438ux437ux430-ux438-r-markdown.}{%
+\section{Задание: Виды анализа и R
+Markdown.}\label{ux437ux430ux434ux430ux43dux438ux435-ux432ux438ux434ux44b-ux430ux43dux430ux43bux438ux437ux430-ux438-r-markdown.}}
+
+\hypertarget{ux431ux44bux43b-ux432ux44bux434ux430ux43d-ux432ux430ux440ux438ux430ux43dux442-ux441ux43e-ux441ux43bux435ux434ux443ux44eux449ux438ux43cux438-ux430ux43dux430ux43bux438ux437ux430ux43cux438}{%
+\paragraph{Был выдан вариант со следующими
+анализами:}\label{ux431ux44bux43b-ux432ux44bux434ux430ux43d-ux432ux430ux440ux438ux430ux43dux442-ux441ux43e-ux441ux43bux435ux434ux443ux44eux449ux438ux43cux438-ux430ux43dux430ux43bux438ux437ux430ux43cux438}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Разведочный
+\item
+  Причинно-следственный
+\end{enumerate}
+
+\hypertarget{ux440ux430ux437ux432ux435ux434ux43eux447ux43dux44bux439-ux430ux43dux430ux43bux438ux437}{%
+\subparagraph{\texorpdfstring{\textbf{Разведочный
+анализ}}{Разведочный анализ}}\label{ux440ux430ux437ux432ux435ux434ux43eux447ux43dux44bux439-ux430ux43dux430ux43bux438ux437}}
+
+\begin{itemize}
+\tightlist
+\item
+  В качестве примера была рассмотрена
+  \href{https://cyberleninka.ru/article/n/obrabotka-i-razvedochnyy-analiz-chislovyh-massivov-dannyh}{данная
+  статья}.
+\end{itemize}
+
+Разведочный анализ зачастую связывают с нахождением общих
+закономерностей, распределений и аномалий, а также построением начальных
+моделей, зачастую с использованием инструментов визуализации. При
+выполнении данный действий мы выявляем в данных значимо отличающиеся
+значения (выбросы).
+
+В данной статье как раз и применяется с помощью критериев Диксона,
+r-статистики, Граббса и других. К примеру в алгоритме с критерием
+Диксона:
+
+\begin{quote}
+\ldots после ранжирования исходной выборки в порядке не убывания
+рассчитывают фактическое значение критерия.
+\end{quote}
+
+А фактическое значение критерия высчитывается с помощью следующей
+формул:
+
+\begin{itemize}
+\tightlist
+\item
+  \(r_{n} = \frac{x_{n} - \tilde{x}}{D_{x}\sqrt{\frac{n-1}{n}}}\) - при
+  подозрении \(x_{n}\) на аномальный максимум;
+\item
+  \(r_{1} = \frac{\tilde{x} - x_{1}}{D_{x}\sqrt{\frac{n-1}{n}}}\) - при
+  подозрении \(x_{1}\) на аномальный минимум.
+\end{itemize}
+
+В данных формулах:
+
+\begin{itemize}
+\tightlist
+\item
+  \(\tilde{x}\) - среднее по выборке (с учётом анализируемого значения);
+\item
+  \(D_{x}\) - дисперсия выборки (с учётом анализируемого значения).
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{ux43fux440ux438ux447ux438ux43dux43dux43e-ux441ux43bux435ux434ux441ux442ux432ux435ux43dux43dux44bux439-ux430ux43dux430ux43bux438ux437}{%
+\subparagraph{\texorpdfstring{\textbf{Причинно-следственный
+анализ}}{Причинно-следственный анализ}}\label{ux43fux440ux438ux447ux438ux43dux43dux43e-ux441ux43bux435ux434ux441ux442ux432ux435ux43dux43dux44bux439-ux430ux43dux430ux43bux438ux437}}
+
+\begin{itemize}
+\tightlist
+\item
+  В качестве примера была рассмотрена
+  \href{https://elibrary.ru/download/elibrary_35222055_16840035.pdf}{данная
+  статья}.
+\end{itemize}
+
+Анализ причинно-следственных связей -- это структурированный метод,
+применяемый для определения возможных причин нежелательного события или
+проблемы. Он систематизирует возможные влияющие факторы в обобщенные
+категории таким образом, что позволяет рассматривать все возможные
+гипотезы.
+
+В данной статье причинно-следственный метод применяется к такой операции
+как поверка газовых счетчиков
+
+Основная суть метода раскрывается в причинно-следственной диаграмме
+
+\includegraphics{955.png}
+
+Причём во время Механистического моделирования использовалась
+приведённая ниже небольшая часть таблицы с массивом данных расчёта
+забойного давления по методу Анзари и формуле Адамова.
+
+\end{document}
